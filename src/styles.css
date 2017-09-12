@@ -95,6 +95,52 @@ hr{
     background-size: cover;
 }
 
+/* Custom <pre> */
+.res-pre-light {
+    color: #bdc3c7;
+}
+
+.artist-img{
+    border-radius: 50%;
+    width: 100%;
+    max-width: 320px;
+}
+/* Mini album img*/
+.album-img-min {
+    height: 40px;
+    width: 40px;
+}
+/* Custom Square */
+.square {
+    position: relative;
+    /*width: 50%;*/
+    max-width: 320px;
+    margin: auto;
+}
+
+.square:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+.content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.content > img {
+    height: 100%;
+    position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+}
 /* Custom Margins */
 .mt-30 { margin-top: 30px }
 .mt-40 { margin-top: 40px }

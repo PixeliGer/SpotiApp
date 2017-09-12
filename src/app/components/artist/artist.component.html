@@ -1,0 +1,68 @@
+<div *ngIf="artist" class="container mt-30 animated fadeIn fast">
+    <div class="row">
+        <div class="col-md-3 text-center">
+            <div class="square">
+                <!-- {{ artist.images[1].url }} -->
+                <div class="content">
+                    <img [src]="artist.images | nofoto" class="" alt="">
+                </div>
+            </div>
+            <!--  -->
+        </div>
+
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>{{ artist.name }} <small>Popularidad {{ artist.popularity }} </small></h3>
+                    <hr>
+                    <a [href]="artist.external_urls?.spotify"
+                        class="btn btn-outline-success"
+                        target="_blank">
+                        Ver página
+                    </a>
+                    <a [routerLink]="['/artists']"
+                        class="btn btn-outline-danger">
+                        Regresar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="tracks" class="container mt-40">
+    <h3>{{ artist.name }} <small>Top Tracks</small></h3>
+    <hr>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-inverse table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Foto</th>
+                            <th>Track</th>
+                            <th>Popularidad</th>
+                            <th>Preview</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let track of tracks; let i = index">
+                            <td>{{ i+1 }}</td>
+                            <td><img [src]="track.album?.images | nofoto" alt="" class="img-rounded center-block album-img-min"></td>
+                            <td>{{ track.name }}</td>
+                            <td>{{ track.popularity }}</td>
+                            <td>
+                                <audio controls>
+                                    <source [src]="track.preview_url">
+                                </audio>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+</div>
