@@ -49,13 +49,11 @@
                     <tbody>
                         <tr *ngFor="let track of tracks; let i = index">
                             <td>{{ i+1 }}</td>
-                            <td><img [src]="track.album?.images | nofoto" alt="" class="img-rounded center-block album-img-min"></td>
+                            <td><img [src]="track.album?.images | nofoto" alt="" class="img-rounded center-block album-img-med"></td>
                             <td>{{ track.name }}</td>
                             <td>{{ track.popularity }}</td>
                             <td>
-                                <audio controls>
-                                    <source [src]="track.preview_url">
-                                </audio>
+                                <iframe [src]=" track.uri | domseguro: 'https://open.spotify.com/embed?uri='" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
                             </td>
                         </tr>
                     </tbody>

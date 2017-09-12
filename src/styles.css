@@ -110,6 +110,10 @@ hr{
     height: 40px;
     width: 40px;
 }
+.album-img-med {
+    height: 80px;
+    width: 80px;
+}
 /* Custom Square */
 .square {
     position: relative;
